@@ -1,0 +1,51 @@
+name: victor_olusoji
+description: Portfolio web app made with flutter.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  animated_text_kit: ^4.2.1
+  auto_route: ^4.0.1
+  auto_route_generator: ^4.0.0
+  cupertino_icons: ^1.0.2
+  flutter_bloc: ^8.0.1
+  flutter_svg: ^1.1.0
+  freezed_annotation: ^2.0.3
+  get_it: ^7.2.0
+  google_fonts: ^3.0.1
+  layout: ^1.0.2
+  responsive_builder: ^0.4.2
+  responsive_framework: ^0.2.0
+  url_launcher: ^6.1.0
+  visibility_detector: ^0.3.3
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner:
+  freezed: ^2.0.3+1
+
+  flutter_lints: ^2.0.1
+
+
+# The following section is specific to Flutter.
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/svgs/
+
+  fonts:
+    - family: CustomIcons
+      fonts:
+        - asset: assets/fonts/CustomIcons.ttf
