@@ -1,5 +1,5 @@
 import 'package:auto_route/annotations.dart';
-import 'package:victor_olusoji/presentation/home/widgets/home_page.dart';
+import 'package:victor_olusoji/presentation/home/home_page.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',

@@ -15,6 +15,8 @@ import 'package:victor_olusoji/presentation/statistics/statistics_section.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 import 'package:victor_olusoji/services/constants.dart';
 
+import 'widgets/page_button.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -23,6 +25,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+  final PageController _pageController = PageController();
+  int _currentProjectPage = 0;
   late final AnimationController _controller = AnimationController(
     duration: const Duration(milliseconds: 300),
     vsync: this,
@@ -40,6 +44,37 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     NavItemData(name: Strings.about, key: GlobalKey()),
     NavItemData(name: Strings.work, key: GlobalKey()),
     NavItemData(name: Strings.connect, key: GlobalKey(), width: 75),
+  ];
+
+  final List<Widget> projectList = [
+    const Projects(
+      pageKey: "FirstProjectPage",
+      sectionKey: "FirstProjectInfoSection",
+      projectName: Strings.morningstarName,
+      projectAltTitle: Strings.morningstarAltTitle,
+      projectBody: Strings.morningstarBody,
+    ),
+    const Projects(
+      pageKey: "SecondProjectPage",
+      sectionKey: "SecondProjectInfoSection",
+      projectName: Strings.chainWalletName,
+      projectAltTitle: Strings.chainWalletTitle,
+      projectBody: Strings.chainWalletBody,
+    ),
+    const Projects(
+      pageKey: "ThirdProjectPage",
+      sectionKey: "ThirdProjectInfoSection",
+      projectName: Strings.portfolioAppName,
+      projectAltTitle: Strings.portfolioAppAltTitle,
+      projectBody: Strings.portfolioAppBody,
+    ),
+    const Projects(
+      pageKey: "FourthProjectPage",
+      sectionKey: "FourthProjectInfoSection",
+      projectName: Strings.cseanName,
+      projectAltTitle: Strings.cseanAltTitle,
+      projectBody: Strings.cseanBody,
+    ),
   ];
 
   @override
@@ -142,9 +177,62 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                     children: [
                       Column(
                         children: [
-                          Container(
-                            key: navItems[2].key,
-                            child: const Projects(),
+                          Stack(
+                            children: [
+                              Container(
+                                key: navItems[2].key,
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(
+                                      height: screenHeight * 0.8,
+                                      child: PageView(
+                                        controller: _pageController,
+                                        physics: const NeverScrollableScrollPhysics(),
+                                        children: projectList,
+                                        onPageChanged: (pageNum) {
+                                          setState(() {
+                                            _currentProjectPage = pageNum;
+                                          });
+                                        },
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: getSidePadding(context) * 1.7),
+                                height: screenHeight * 0.7,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        if (_currentProjectPage != 0)
+                                          PageButton(
+                                            onPressed: () {
+                                              _pageController.jumpToPage(_currentProjectPage - 1);
+                                            },
+                                            isLeft: true,
+                                            buttonTitle: 'Previous',
+                                            iconData: Icons.arrow_right_alt_sharp,
+                                          ),
+                                        if (_currentProjectPage != 0)
+                                          const SizedBox(width: 40),
+                                        if (_currentProjectPage != (projectList.length - 1))
+                                          PageButton(
+                                            onPressed: () {
+                                              _pageController.jumpToPage(_currentProjectPage + 1);
+                                            },
+                                            buttonTitle: 'Next',
+                                            iconData: Icons.arrow_right_alt_sharp,
+                                          ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
                           SizedBox(height: spacerHeight),
                           Container(

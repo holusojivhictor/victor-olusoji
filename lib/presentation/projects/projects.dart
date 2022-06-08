@@ -8,7 +8,20 @@ import 'package:victor_olusoji/services/constants.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 class Projects extends StatefulWidget {
-  const Projects({Key? key}) : super(key: key);
+  final String pageKey;
+  final String sectionKey;
+  final String projectName;
+  final String projectAltTitle;
+  final String projectBody;
+
+  const Projects({
+    Key? key,
+    required this.pageKey,
+    required this.sectionKey,
+    required this.projectName,
+    required this.projectAltTitle,
+    required this.projectBody,
+  }) : super(key: key);
 
   @override
   State<Projects> createState() => _ProjectsState();
@@ -59,7 +72,7 @@ class _ProjectsState extends State<Projects> with TickerProviderStateMixin {
     );
 
     return VisibilityDetector(
-      key: const Key("ProjectsPage"),
+      key: Key(widget.pageKey),
       onVisibilityChanged: (visibilityInfo) {
         final visiblePercentage = visibilityInfo.visibleFraction * 100;
         if (visiblePercentage > 40) {
@@ -159,14 +172,14 @@ class _ProjectsState extends State<Projects> with TickerProviderStateMixin {
   }
 
   Widget _buildProjectsSection() {
-    return const CustomInfoSection(
-      visibilityKey: "ProjectInfoSection",
+    return CustomInfoSection(
+      visibilityKey: widget.sectionKey,
       isProjects: true,
       sectionTitle: Strings.projectSectionTitle,
-      altTitle: Strings.projectAltTitle,
+      altTitle: widget.projectAltTitle,
       title: Strings.projectTitle,
-      body: Strings.projectBody,
-      projectName: Strings.projectName,
+      body: widget.projectBody,
+      projectName: widget.projectName,
       buttonTitle: Strings.checkOut,
     );
   }

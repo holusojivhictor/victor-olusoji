@@ -41,10 +41,27 @@ class Strings {
 
   // Projects
   static const String projectSectionTitle = "Portfolio";
-  static const String projectAltTitle = "COD guide app";
-  static const String projectTitle = "My latest work.";
-  static const String projectName = "Morningstar";
-  static const String projectBody = "This is Morningstar, a COD mobile guide app, it's got features such as adding all your in-game items to an inventory, reading comics, creating tier lists and many more. With more features like the Gunsmith, ClanWars reminders, and a node log tracker incoming.";
+  static const String projectTitle = "My latest works.";
+
+  // Morningstar
+  static const String morningstarName = "Morningstar";
+  static const String morningstarAltTitle = "COD Guide App";
+  static const String morningstarBody = "This is Morningstar, a COD mobile guide app, it's got features such as adding all your in-game items to an inventory, reading comics, creating tier lists and many more. With more features like the Gunsmith, ClanWars reminders, and a node log tracker incoming.";
+
+  // Morningstar
+  static const String chainWalletName = "Chain Wallet";
+  static const String chainWalletTitle = "Crypto Wallet App";
+  static const String chainWalletBody = "This is Morningstar, a COD mobile guide app, it's got features such as adding all your in-game items to an inventory, reading comics, creating tier lists and many more. With more features like the Gunsmith, ClanWars reminders, and a node log tracker incoming.";
+
+  // Morningstar
+  static const String portfolioAppName = "Victor Olusoji";
+  static const String portfolioAppAltTitle = "Portfolio Web App";
+  static const String portfolioAppBody = "This is Morningstar, a COD mobile guide app, it's got features such as adding all your in-game items to an inventory, reading comics, creating tier lists and many more. With more features like the Gunsmith, ClanWars reminders, and a node log tracker incoming.";
+
+  // Morningstar
+  static const String cseanName = "CSEAN";
+  static const String cseanAltTitle = "Membership Management App";
+  static const String cseanBody = "This is Morningstar, a COD mobile guide app, it's got features such as adding all your in-game items to an inventory, reading comics, creating tier lists and many more. With more features like the Gunsmith, ClanWars reminders, and a node log tracker incoming.";
 
   // Statistics
   static const String experience = "Years of Experience";
