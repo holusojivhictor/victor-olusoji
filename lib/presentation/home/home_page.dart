@@ -143,7 +143,19 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                     children: [
                       Column(
                         children: [
-                          Header(key: navItems[0].key),
+                          VisibilityDetector(
+                            key: const Key("Header"),
+                            onVisibilityChanged: (visibilityInfo) {
+                              final visiblePercentage = visibilityInfo.visibleFraction * 100;
+                              if (visiblePercentage > 50) {
+                                setState(() {
+                                  navItems[0].isSelected = true;
+                                });
+                                clearSelections(0);
+                              }
+                            },
+                            child: Header(key: navItems[0].key),
+                          ),
                           SizedBox(height: spacerHeight),
                           VisibilityDetector(
                             key: const Key("AboutMe"),
@@ -151,6 +163,12 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                               final visiblePercentage = visibilityInfo.visibleFraction * 100;
                               if (visiblePercentage > 10) {
                                 _controller.forward();
+                              }
+                              if (visiblePercentage > 50) {
+                                setState(() {
+                                  navItems[1].isSelected = true;
+                                });
+                                clearSelections(1);
                               }
                             },
                             child: Container(
@@ -179,25 +197,37 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                         children: [
                           Stack(
                             children: [
-                              Container(
-                                key: navItems[2].key,
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(
-                                      height: screenHeight * 0.8,
-                                      child: PageView(
-                                        controller: _pageController,
-                                        physics: const NeverScrollableScrollPhysics(),
-                                        children: projectList,
-                                        onPageChanged: (pageNum) {
-                                          setState(() {
-                                            _currentProjectPage = pageNum;
-                                          });
-                                        },
+                              VisibilityDetector(
+                                key: const Key("Projects"),
+                                onVisibilityChanged: (visibilityInfo) {
+                                  final visiblePercentage = visibilityInfo.visibleFraction * 100;
+                                  if (visiblePercentage > 50) {
+                                    setState(() {
+                                      navItems[2].isSelected = true;
+                                    });
+                                    clearSelections(2);
+                                  }
+                                },
+                                child: Container(
+                                  key: navItems[2].key,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(
+                                        height: screenHeight * 0.8,
+                                        child: PageView(
+                                          controller: _pageController,
+                                          physics: const NeverScrollableScrollPhysics(),
+                                          children: projectList,
+                                          onPageChanged: (pageNum) {
+                                            setState(() {
+                                              _currentProjectPage = pageNum;
+                                            });
+                                          },
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                               Container(
@@ -235,9 +265,21 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                             ],
                           ),
                           SizedBox(height: spacerHeight),
-                          Container(
-                            key: navItems[3].key,
-                            child: const Contact(),
+                          VisibilityDetector(
+                            key: const Key("Contact"),
+                            onVisibilityChanged: (visibilityInfo) {
+                              final visiblePercentage = visibilityInfo.visibleFraction * 100;
+                              if (visiblePercentage > 50) {
+                                setState(() {
+                                  navItems[3].isSelected = true;
+                                });
+                                clearSelections(3);
+                              }
+                            },
+                            child: Container(
+                              key: navItems[3].key,
+                              child: const Contact(),
+                            ),
                           ),
                         ],
                       ),
@@ -250,5 +292,19 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         ],
       ),
     );
+  }
+
+  void clearSelections(int exclude) {
+    List<int> indexList = <int>[];
+    for (var element in navItems) {
+      final index = navItems.indexOf(element);
+      indexList.add(index);
+    }
+    indexList.remove(exclude);
+    for (var index in indexList) {
+      setState(() {
+        navItems[index].isSelected = false;
+      });
+    }
   }
 }
