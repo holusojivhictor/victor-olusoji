@@ -15,5 +15,8 @@ class Assets {
 
   // Projects
   static const String moon = "$svgDir/moon.svg";
-  static const String morningstar = "$imageDir/morningstar-preview.png";
+  static const String morningstarPreview = "$imageDir/morningstar-preview.png";
+  static const String chainWalletPreview = "$imageDir/chain-wallet-preview.png";
+  static const String portfolioPreview = "$imageDir/portfolio-preview.png";
+  static const String cseanPreview = "$imageDir/csean-preview.png";
 }

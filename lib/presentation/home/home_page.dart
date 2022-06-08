@@ -53,6 +53,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       projectName: Strings.morningstarName,
       projectAltTitle: Strings.morningstarAltTitle,
       projectBody: Strings.morningstarBody,
+      projectPreview: Assets.morningstarPreview,
     ),
     const Projects(
       pageKey: "SecondProjectPage",
@@ -60,6 +61,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       projectName: Strings.chainWalletName,
       projectAltTitle: Strings.chainWalletTitle,
       projectBody: Strings.chainWalletBody,
+      projectPreview: Assets.chainWalletPreview,
     ),
     const Projects(
       pageKey: "ThirdProjectPage",
@@ -67,6 +69,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       projectName: Strings.portfolioAppName,
       projectAltTitle: Strings.portfolioAppAltTitle,
       projectBody: Strings.portfolioAppBody,
+      projectPreview: Assets.portfolioPreview,
     ),
     const Projects(
       pageKey: "FourthProjectPage",
@@ -74,6 +77,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       projectName: Strings.cseanName,
       projectAltTitle: Strings.cseanAltTitle,
       projectBody: Strings.cseanBody,
+      projectPreview: Assets.cseanPreview,
     ),
   ];
 

@@ -51,17 +51,17 @@ class Strings {
   // Morningstar
   static const String chainWalletName = "Chain Wallet";
   static const String chainWalletTitle = "Crypto Wallet App";
-  static const String chainWalletBody = "This is Morningstar, a COD mobile guide app, it's got features such as adding all your in-game items to an inventory, reading comics, creating tier lists and many more. With more features like the Gunsmith, ClanWars reminders, and a node log tracker incoming.";
+  static const String chainWalletBody = "A mobile app for a basic on-chain second-layer wallet system. Wallets are managed by a master contract that enables the use of a single externally owned account to control multiple wallets, effectively creating a gateway for securely accessing cryptocurrencies and interacting with smart contracts.";
 
   // Morningstar
   static const String portfolioAppName = "Victor Olusoji";
   static const String portfolioAppAltTitle = "Portfolio Web App";
-  static const String portfolioAppBody = "This is Morningstar, a COD mobile guide app, it's got features such as adding all your in-game items to an inventory, reading comics, creating tier lists and many more. With more features like the Gunsmith, ClanWars reminders, and a node log tracker incoming.";
+  static const String portfolioAppBody = "A web app serving as my personal portfolio, developed with Flutter. It showcases some of my works and presents information about my career in tech thus far.";
 
   // Morningstar
   static const String cseanName = "CSEAN";
   static const String cseanAltTitle = "Membership Management App";
-  static const String cseanBody = "This is Morningstar, a COD mobile guide app, it's got features such as adding all your in-game items to an inventory, reading comics, creating tier lists and many more. With more features like the Gunsmith, ClanWars reminders, and a node log tracker incoming.";
+  static const String cseanBody = "This is the CSEAN (Cyber Security Experts Association of Nigeria) members management app. Made with Flutter and feature rich, including a membership tracker system, a payment system and message boards in the form of forums.";
 
   // Statistics
   static const String experience = "Years of Experience";

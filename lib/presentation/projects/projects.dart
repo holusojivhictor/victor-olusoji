@@ -13,6 +13,7 @@ class Projects extends StatefulWidget {
   final String projectName;
   final String projectAltTitle;
   final String projectBody;
+  final String projectPreview;
 
   const Projects({
     Key? key,
@@ -21,6 +22,7 @@ class Projects extends StatefulWidget {
     required this.projectName,
     required this.projectAltTitle,
     required this.projectBody,
+    required this.projectPreview,
   }) : super(key: key);
 
   @override
@@ -149,7 +151,7 @@ class _ProjectsState extends State<Projects> with TickerProviderStateMixin {
     return Stack(
       children: [
         Positioned(
-          top: width * 0.05,
+          top: width * 0.2,
           left: width * 0.15,
           child: SvgImage(
             image: Assets.moon,
@@ -163,7 +165,7 @@ class _ProjectsState extends State<Projects> with TickerProviderStateMixin {
             scale: _scaleAnimation,
             child: SlideTransition(
               position: _slideDownAnimation,
-              child: Image.asset(Assets.morningstar),
+              child: Image.asset(widget.projectPreview),
             ),
           ),
         ),
