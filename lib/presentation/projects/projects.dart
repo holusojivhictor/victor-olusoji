@@ -14,6 +14,7 @@ class Projects extends StatefulWidget {
   final String projectAltTitle;
   final String projectBody;
   final String projectPreview;
+  final bool isPortfolio;
 
   const Projects({
     Key? key,
@@ -23,6 +24,7 @@ class Projects extends StatefulWidget {
     required this.projectAltTitle,
     required this.projectBody,
     required this.projectPreview,
+    this.isPortfolio = false,
   }) : super(key: key);
 
   @override
@@ -165,7 +167,13 @@ class _ProjectsState extends State<Projects> with TickerProviderStateMixin {
             scale: _scaleAnimation,
             child: SlideTransition(
               position: _slideDownAnimation,
-              child: Image.asset(widget.projectPreview),
+              child: Image.asset(
+                widget.projectPreview,
+                height: widget.isPortfolio ? height * 0.6 : null,
+                width: widget.isPortfolio ? width * 0.6 : null,
+                filterQuality: FilterQuality.high,
+                fit: BoxFit.contain,
+              ),
             ),
           ),
         ),
