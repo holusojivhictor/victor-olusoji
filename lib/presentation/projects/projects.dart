@@ -102,7 +102,7 @@ class _ProjectsState extends State<Projects> with TickerProviderStateMixin {
                       }
                     },
                   ),
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 70),
                   ResponsiveBuilder(
                     builder: (context, size) {
                       final screenWidth = size.screenSize.width;

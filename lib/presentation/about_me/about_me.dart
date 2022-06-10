@@ -75,7 +75,7 @@ class _AboutMeState extends State<AboutMe> with SingleTickerProviderStateMixin {
                     width: contentAreaWidthSm,
                     child: _buildImage(height: contentAreaHeightSm, width: contentAreaWidthSm),
                   ),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 30),
                   ContentArea(
                     width: contentAreaWidthSm,
                     child: _buildAboutMe(height: screenHeight * 0.9, width: contentAreaWidthSm),

@@ -7,8 +7,6 @@ import 'package:victor_olusoji/presentation/shared/content_area.dart';
 import 'package:victor_olusoji/presentation/shared/utils/helpers.dart';
 import 'package:victor_olusoji/services/constants.dart';
 
-import 'header_image.dart';
-
 const double bodyTextSizeLg = 16.0;
 const double bodyTextSizeSm = 14.0;
 const double buttonTextSizeLg = 18.0;
@@ -63,29 +61,13 @@ class _HeaderMobileState extends State<HeaderMobile> with SingleTickerProviderSt
     return ContentArea(
       child: Stack(
         children: [
-          SizedBox(
-            height: heightOfStack,
-            child: Stack(
-              children: [
-                Positioned(
-                  right: 0,
-                  child: SvgImage(
-                    image: Assets.header,
-                    label: "Header Image",
-                    height: heightOfStack / 1.35,
-                    width: sizeOfSvgSm,
-                  ),
-                ),
-              ],
-            ),
-          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Stack(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: heightOfStack * 0.15, left: sizeOfSvgSm * 0.25),
+                    margin: EdgeInsets.only(top: heightOfStack * 0.15, left: sidePadding * 1.5),
                     child: SelectableText(
                       Strings.hiThere,
                       style: textTheme.bodyLarge?.copyWith(
@@ -94,7 +76,7 @@ class _HeaderMobileState extends State<HeaderMobile> with SingleTickerProviderSt
                     ),
                   ),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: sidePadding),
+                    padding: const EdgeInsets.symmetric(horizontal: sidePadding * 1.5),
                     margin: EdgeInsets.only(top: heightOfStack * 0.3),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -104,7 +86,7 @@ class _HeaderMobileState extends State<HeaderMobile> with SingleTickerProviderSt
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             ConstrainedBox(
-                              constraints: BoxConstraints(maxWidth: screenWidth * 0.2),
+                              constraints: BoxConstraints(maxWidth: screenWidth * 0.7),
                               child: AnimatedTextKit(
                                 animatedTexts: [
                                   TyperAnimatedText(
@@ -122,7 +104,7 @@ class _HeaderMobileState extends State<HeaderMobile> with SingleTickerProviderSt
                             ),
                             const SizedBox(height: 25),
                             ConstrainedBox(
-                              constraints: BoxConstraints(maxWidth: screenWidth * 0.3),
+                              constraints: BoxConstraints(maxWidth: screenWidth * 0.8),
                               child: AnimatedTextKit(
                                 animatedTexts: [
                                   RotateAnimatedText(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:victor_olusoji/presentation/about_me/about_me.dart';
 import 'package:victor_olusoji/presentation/contact/contact.dart';
 import 'package:victor_olusoji/presentation/header/header.dart';
+import 'package:victor_olusoji/presentation/header/widgets/header_mobile.dart';
 import 'package:victor_olusoji/presentation/home/widgets/nav_arguments.dart';
 import 'package:victor_olusoji/presentation/loading/loading_page.dart';
 import 'package:victor_olusoji/presentation/navigation/widgets/app_drawer.dart';
@@ -120,6 +121,19 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     final theme = Theme.of(context);
     double screenHeight = heightOfScreen(context);
     double spacerHeight = screenHeight * 0.10;
+    final buttonHeight = responsiveSize(context, screenHeight * 0.6, screenHeight * 0.7, md: screenHeight * 0.8);
+    final leftPadding = responsiveSize(
+      context,
+      sidePadding * 1.5,
+      getSidePadding(context) * 1.7,
+      md: getSidePadding(context) * 1.7,
+    );
+    final projectHeight = responsiveSize(
+      context,
+      screenHeight * 1.3,
+      screenHeight * 0.8,
+      md: screenHeight * 1.3,
+    );
 
     return Scaffold(
       backgroundColor: theme.scaffoldBackgroundColor,
@@ -237,7 +251,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           SizedBox(
-                                            height: screenHeight * 0.8,
+                                            height: projectHeight,
                                             child: PageView(
                                               controller: _pageController,
                                               physics: const NeverScrollableScrollPhysics(),
@@ -254,8 +268,8 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                                     ),
                                   ),
                                   Container(
-                                    padding: EdgeInsets.symmetric(horizontal: getSidePadding(context) * 1.7),
-                                    height: screenHeight * 0.7,
+                                    padding: EdgeInsets.symmetric(horizontal: leftPadding),
+                                    height: buttonHeight,
                                     child: Column(
                                       mainAxisAlignment: MainAxisAlignment.end,
                                       children: [

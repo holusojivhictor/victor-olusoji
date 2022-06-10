@@ -71,7 +71,7 @@ int responsiveSizeInt(BuildContext context, int xs, int lg, {int? sm, int? md, i
 
 double getSidePadding(BuildContext context) {
   double sidePadding = assignWidth(context, 0.05);
-  return responsiveSize(context, 30, sidePadding, md: sidePadding);
+  return responsiveSize(context, 16, sidePadding, md: sidePadding, sm: 20);
 }
 
 double computeHeight(double offset, double sizeOfSvg) {
