@@ -200,6 +200,7 @@ class _LoadingPageState extends State<LoadingPage> with TickerProviderStateMixin
                         ],
                       ),
                       const SizedBox(height: 20),
+                      const SizedBox(height: 0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
