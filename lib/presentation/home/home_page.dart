@@ -263,41 +263,42 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                                               },
                                             ),
                                           ),
+                                          const SizedBox(height: 20),
+                                          ResponsiveBuilder(
+                                            builder: (context, size) {
+                                              final screenWidth = size.screenSize.width;
+                                              if (screenWidth < const RefinedBreakpoints().tabletSmall) {
+                                                return Padding(
+                                                  padding: EdgeInsets.symmetric(horizontal: leftPadding),
+                                                  child: buildButtonRow(),
+                                                );
+                                              } else {
+                                                return const SizedBox.shrink();
+                                              }
+                                            },
+                                          ),
                                         ],
                                       ),
                                     ),
                                   ),
-                                  Container(
-                                    padding: EdgeInsets.symmetric(horizontal: leftPadding),
-                                    height: buttonHeight,
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            if (_currentProjectPage != 0)
-                                              PageButton(
-                                                onPressed: () {
-                                                  _pageController.jumpToPage(_currentProjectPage - 1);
-                                                },
-                                                isLeft: true,
-                                                buttonTitle: 'Previous',
-                                                iconData: Icons.arrow_right_alt_sharp,
-                                              ),
-                                            if (_currentProjectPage != 0)
-                                              const SizedBox(width: 40),
-                                            if (_currentProjectPage != (projectList.length - 1))
-                                              PageButton(
-                                                onPressed: () {
-                                                  _pageController.jumpToPage(_currentProjectPage + 1);
-                                                },
-                                                buttonTitle: 'Next',
-                                                iconData: Icons.arrow_right_alt_sharp,
-                                              ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
+                                  ResponsiveBuilder(
+                                    builder: (context, size) {
+                                      final screenWidth = size.screenSize.width;
+                                      if (screenWidth < const RefinedBreakpoints().tabletSmall) {
+                                        return const SizedBox.shrink();
+                                      } else {
+                                        return Container(
+                                          padding: EdgeInsets.symmetric(horizontal: leftPadding),
+                                          height: buttonHeight,
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.end,
+                                            children: [
+                                              buildButtonRow(),
+                                            ],
+                                          ),
+                                        );
+                                      }
+                                    },
                                   ),
                                 ],
                               ),
@@ -351,5 +352,31 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         navItems[index].isSelected = false;
       });
     }
+  }
+
+  Widget buildButtonRow() {
+    return Row(
+      children: [
+        if (_currentProjectPage != 0)
+          PageButton(
+            onPressed: () {
+              _pageController.jumpToPage(_currentProjectPage - 1);
+            },
+            isLeft: true,
+            buttonTitle: 'Previous',
+            iconData: Icons.arrow_right_alt_sharp,
+          ),
+        if (_currentProjectPage != 0)
+          const SizedBox(width: 40),
+        if (_currentProjectPage != (projectList.length - 1))
+          PageButton(
+            onPressed: () {
+              _pageController.jumpToPage(_currentProjectPage + 1);
+            },
+            buttonTitle: 'Next',
+            iconData: Icons.arrow_right_alt_sharp,
+          ),
+      ],
+    );
   }
 }

@@ -102,12 +102,12 @@ class _ProjectsState extends State<Projects> with TickerProviderStateMixin {
                       }
                     },
                   ),
-                  const SizedBox(height: 120),
+                  const SizedBox(height: 20),
                   ResponsiveBuilder(
                     builder: (context, size) {
                       final screenWidth = size.screenSize.width;
                       if (screenWidth < const RefinedBreakpoints().tabletSmall) {
-                        return _buildImage(height: screenHeight * 0.75, width: screenWidth);
+                        return Center(child: _buildImage(height: screenHeight * 0.8, width: screenWidth * 0.8));
                       } else {
                         return Center(child: _buildImage(height: screenHeight * 0.75, width: screenWidth * 0.75));
                       }
@@ -152,9 +152,7 @@ class _ProjectsState extends State<Projects> with TickerProviderStateMixin {
   Widget _buildImage({required double height, required double width}) {
     return Stack(
       children: [
-        Positioned(
-          top: width * 0.2,
-          left: width * 0.15,
+        Center(
           child: SvgImage(
             image: Assets.moon,
             label: "Moon Blob Svg",
