@@ -121,7 +121,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     final theme = Theme.of(context);
     double screenHeight = heightOfScreen(context);
     double spacerHeight = screenHeight * 0.10;
-    final buttonHeight = responsiveSize(context, screenHeight * 0.6, screenHeight * 0.7, md: screenHeight * 0.8);
+    final buttonHeight = responsiveSize(context, screenHeight * 0.65, screenHeight * 0.7, md: screenHeight * 0.8);
     final leftPadding = responsiveSize(
       context,
       sidePadding * 1.5,

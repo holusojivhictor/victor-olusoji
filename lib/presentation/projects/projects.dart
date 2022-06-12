@@ -102,12 +102,12 @@ class _ProjectsState extends State<Projects> with TickerProviderStateMixin {
                       }
                     },
                   ),
-                  const SizedBox(height: 70),
+                  const SizedBox(height: 120),
                   ResponsiveBuilder(
                     builder: (context, size) {
                       final screenWidth = size.screenSize.width;
                       if (screenWidth < const RefinedBreakpoints().tabletSmall) {
-                        return _buildImage(height: screenHeight * 0.5, width: screenWidth);
+                        return _buildImage(height: screenHeight * 0.75, width: screenWidth);
                       } else {
                         return Center(child: _buildImage(height: screenHeight * 0.75, width: screenWidth * 0.75));
                       }

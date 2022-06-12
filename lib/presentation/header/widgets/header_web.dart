@@ -43,6 +43,7 @@ class _HeaderWebState extends State<HeaderWeb> with SingleTickerProviderStateMix
 
   @override
   void dispose() {
+    _controller.dispose();
     super.dispose();
   }
 
