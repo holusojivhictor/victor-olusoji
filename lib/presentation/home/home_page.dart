@@ -59,6 +59,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       projectAltTitle: Strings.morningstarAltTitle,
       projectBody: Strings.morningstarBody,
       projectPreview: Assets.morningstarPreview,
+      projectUrl: Strings.morningstarUrl,
     ),
     const Projects(
       pageKey: "SecondProjectPage",
@@ -67,6 +68,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       projectAltTitle: Strings.chainWalletTitle,
       projectBody: Strings.chainWalletBody,
       projectPreview: Assets.chainWalletPreview,
+      projectUrl: Strings.chainWalletUrl,
     ),
     const Projects(
       pageKey: "ThirdProjectPage",
@@ -75,6 +77,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       projectAltTitle: Strings.portfolioAppAltTitle,
       projectBody: Strings.portfolioAppBody,
       projectPreview: Assets.portfolioPreview,
+      projectUrl: Strings.portfolioAppUrl,
       isPortfolio: true,
     ),
     const Projects(
@@ -84,6 +87,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       projectAltTitle: Strings.cseanAltTitle,
       projectBody: Strings.cseanBody,
       projectPreview: Assets.cseanPreview,
+      projectUrl: Strings.cseanUrl,
     ),
   ];
 
@@ -121,7 +125,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     final theme = Theme.of(context);
     double screenHeight = heightOfScreen(context);
     double spacerHeight = screenHeight * 0.10;
-    final buttonHeight = responsiveSize(context, screenHeight * 0.65, screenHeight * 0.7, md: screenHeight * 0.8);
+    final buttonHeight = responsiveSize(context, screenHeight * 0.65, screenHeight * 0.7, sm: screenHeight * 0.65, md: screenHeight * 0.8);
     final leftPadding = responsiveSize(
       context,
       sidePadding * 1.5,
@@ -132,7 +136,8 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       context,
       screenHeight * 1.3,
       screenHeight * 0.8,
-      md: screenHeight * 1.3,
+      sm: screenHeight * 1.3,
+      md: screenHeight * 0.9,
     );
 
     return Scaffold(
@@ -267,7 +272,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                                           ResponsiveBuilder(
                                             builder: (context, size) {
                                               final screenWidth = size.screenSize.width;
-                                              if (screenWidth < const RefinedBreakpoints().tabletSmall) {
+                                              if (screenWidth < const RefinedBreakpoints().tabletLarge) {
                                                 return Padding(
                                                   padding: EdgeInsets.symmetric(horizontal: leftPadding),
                                                   child: buildButtonRow(),

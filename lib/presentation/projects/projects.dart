@@ -14,6 +14,7 @@ class Projects extends StatefulWidget {
   final String projectAltTitle;
   final String projectBody;
   final String projectPreview;
+  final String projectUrl;
   final bool isPortfolio;
 
   const Projects({
@@ -24,6 +25,7 @@ class Projects extends StatefulWidget {
     required this.projectAltTitle,
     required this.projectBody,
     required this.projectPreview,
+    required this.projectUrl,
     this.isPortfolio = false,
   }) : super(key: key);
 
@@ -189,6 +191,7 @@ class _ProjectsState extends State<Projects> with TickerProviderStateMixin {
       body: widget.projectBody,
       projectName: widget.projectName,
       buttonTitle: Strings.checkOut,
+      buttonUrl: widget.projectUrl,
     );
   }
 }

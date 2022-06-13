@@ -12,7 +12,7 @@ class Header extends StatelessWidget {
       refinedBreakpoints: const RefinedBreakpoints(),
       builder: (context, size) {
         final screenWidth = size.screenSize.width;
-        if (screenWidth <= const RefinedBreakpoints().tabletSmall) {
+        if (screenWidth <= const RefinedBreakpoints().tabletLarge) {
           return const HeaderMobile();
         } else {
           return const HeaderWeb();

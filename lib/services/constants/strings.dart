@@ -45,21 +45,25 @@ class Strings {
 
   // Morningstar
   static const String morningstarName = "Morningstar";
+  static const String morningstarUrl = "https://play.google.com/store/apps/details?id=com.morpheus.morningstar";
   static const String morningstarAltTitle = "COD Guide App";
   static const String morningstarBody = "This is Morningstar, a COD mobile guide app, it's got features such as adding all your in-game items to an inventory, reading comics, creating tier lists and many more. With more features like the Gunsmith, ClanWars reminders, and a node log tracker incoming.";
 
-  // Morningstar
+  // Chain Wallet
   static const String chainWalletName = "Chain Wallet";
+  static const String chainWalletUrl = "";
   static const String chainWalletTitle = "Crypto Wallet App";
   static const String chainWalletBody = "A mobile app for a basic on-chain second-layer wallet system. Wallets are managed by a master contract that enables the use of a single externally owned account to control multiple wallets, effectively creating a gateway for securely accessing cryptocurrencies and interacting with smart contracts.";
 
-  // Morningstar
+  // Victor Olusoji (Portfolio)
   static const String portfolioAppName = "Victor Olusoji";
+  static const String portfolioAppUrl = "https://holusojivhictor.github.io";
   static const String portfolioAppAltTitle = "Portfolio Web App";
   static const String portfolioAppBody = "A web app serving as my personal portfolio, developed with Flutter. It showcases some of my works and presents information about my career in tech thus far.";
 
-  // Morningstar
+  // CSEAN
   static const String cseanName = "CSEAN";
+  static const String cseanUrl = "";
   static const String cseanAltTitle = "Membership Management App";
   static const String cseanBody = "This is the CSEAN (Cyber Security Experts Association of Nigeria) members management app. Made with Flutter and feature rich, including a membership tracker system, a payment system and message boards in the form of forums.";
 
@@ -84,6 +88,9 @@ class Strings {
   static const String githubUrl = "https://github.com/holusojivhictor";
   static const String linkedInUrl = "https://www.linkedin.com/in/victor-olusoji-007";
   static const String discordUrl = "https://discord.com/users/753337945439862826";
+
+  // Urls
+  static const String resumeUrl = "https://drive.google.com/file/d/17KMFZnBM7SiUkNuyptJm3CGr3GDKsBPG/view?usp=drivesdk";
 
   // Hint Texts
   static const String emailHint = "Your email";

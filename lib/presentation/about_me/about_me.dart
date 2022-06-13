@@ -155,6 +155,7 @@ class _AboutMeState extends State<AboutMe> with SingleTickerProviderStateMixin {
                 body: Strings.aboutBody,
                 altBody: Strings.aboutAltBody,
                 buttonTitle: Strings.downloadCV,
+                buttonUrl: Strings.resumeUrl,
               ),
             ],
           ),
@@ -172,6 +173,7 @@ class _AboutMeState extends State<AboutMe> with SingleTickerProviderStateMixin {
       body: Strings.aboutBody,
       altBody: Strings.aboutAltBody,
       buttonTitle: Strings.downloadCV,
+      buttonUrl: Strings.resumeUrl,
     );
   }
 }

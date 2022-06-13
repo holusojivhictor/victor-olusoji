@@ -25,7 +25,7 @@ class PageButton extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(5)),
-          color: Colors.white.withOpacity(0.15),
+          border: Border.all(color: Colors.white.withOpacity(0.4)),
         ),
         padding: const EdgeInsets.all(10.0),
         child: Row(

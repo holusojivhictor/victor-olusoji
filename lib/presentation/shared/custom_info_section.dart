@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:victor_olusoji/presentation/layout/adaptive.dart';
 import 'package:victor_olusoji/presentation/shared/buttons/default_button.dart';
 import 'package:victor_olusoji/presentation/shared/section_title.dart';
+import 'package:victor_olusoji/presentation/shared/utils/helpers.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 class CustomInfoSection extends StatefulWidget {
@@ -21,6 +22,7 @@ class CustomInfoSection extends StatefulWidget {
   final Widget? child;
   final bool isProjects;
   final String buttonTitle;
+  final String buttonUrl;
 
   const CustomInfoSection({
     Key? key,
@@ -29,8 +31,9 @@ class CustomInfoSection extends StatefulWidget {
     required this.altTitle,
     required this.title,
     required this.body,
-    this.altBody = "",
     required this.buttonTitle,
+    required this.buttonUrl,
+    this.altBody = "",
     this.isProjects = false,
     this.projectName = "",
     this.sectionTitleStyle,
@@ -248,7 +251,7 @@ class _CustomInfoSectionState extends State<CustomInfoSection> with TickerProvid
                             height: buttonHeight,
                             buttonTitle: widget.buttonTitle,
                             titleStyle: buttonTitleStyle,
-                            onPressed: () {},
+                            onPressed: () => openUrl(widget.buttonUrl),
                           ),
                         ],
                       ),

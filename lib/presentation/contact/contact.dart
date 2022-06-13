@@ -11,6 +11,8 @@ class Contact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    final fontSize = responsiveSize(context, 12, 14);
     final screenWidth = widthOfScreen(context) - getSidePadding(context);
     final screenHeight = heightOfScreen(context);
     final contentAreaHeight = screenHeight * 0.6;
@@ -51,47 +53,73 @@ class Contact extends StatelessWidget {
                     }
                   },
                 ),
+                const SizedBox(height: 20),
+                RichText(
+                  text: TextSpan(
+                    text: "© Victor Olusoji | Developed with Flutter",
+                    style: textTheme.bodyMedium!.copyWith(
+                      color: Colors.white.withOpacity(0.3),
+                      fontSize: fontSize,
+                    ),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
               ],
             );
           } else {
-            return Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            return Column(
               children: [
-                ContentArea(
-                  height: contentAreaHeight,
-                  width: contentAreaWidth,
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Column(
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ContentArea(
+                      height: contentAreaHeight,
+                      width: contentAreaWidth,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Column(
+                              children: [
+                                const SizedBox(height: 80),
+                                _buildContactSection(),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 40),
+                      child: ContentArea(
+                        height: contentAreaHeight,
+                        width: screenWidth * 0.3,
+                        child: Row(
                           children: [
-                            const SizedBox(height: 80),
-                            _buildContactSection(),
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  const SizedBox(height: 100),
+                                  _buildFormField(),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 40),
-                  child: ContentArea(
-                    height: contentAreaHeight,
-                    width: screenWidth * 0.3,
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Column(
-                            children: [
-                              const SizedBox(height: 100),
-                              _buildFormField(),
-                            ],
-                          ),
-                        ),
-                      ],
+                const SizedBox(height: 20),
+                RichText(
+                  text: TextSpan(
+                    text: "© Victor Olusoji | Developed with Flutter",
+                    style: textTheme.bodyMedium!.copyWith(
+                      color: Colors.white.withOpacity(0.3),
+                      fontSize: fontSize,
                     ),
                   ),
+                  textAlign: TextAlign.center,
                 ),
               ],
             );
