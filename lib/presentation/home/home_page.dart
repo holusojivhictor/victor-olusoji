@@ -289,7 +289,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                                   ResponsiveBuilder(
                                     builder: (context, size) {
                                       final screenWidth = size.screenSize.width;
-                                      if (screenWidth < const RefinedBreakpoints().tabletSmall) {
+                                      if (screenWidth < const RefinedBreakpoints().tabletLarge) {
                                         return const SizedBox.shrink();
                                       } else {
                                         return Container(
